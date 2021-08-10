@@ -35,3 +35,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+ProjectSettings/EditorSettings.asset
+.idea/.idea.apocalipse-zumbi/.idea/vcs.xml
+.idea/.idea.apocalipse-zumbi/.idea/sonarIssues.xml
+.idea/.idea.apocalipse-zumbi/.idea/indexLayout.xml
+.idea/.idea.apocalipse-zumbi/.idea/encodings.xml
