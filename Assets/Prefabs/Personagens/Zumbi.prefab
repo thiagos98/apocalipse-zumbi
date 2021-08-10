@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4941635705825534}
+  - component: {fileID: 136651507253161564}
   m_Layer: 0
   m_Name: Zumbi
   m_TagString: Inimigo
@@ -1296,8 +1297,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063500868937916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.6774189, z: -0, w: 0.7355975}
+  m_LocalPosition: {x: -21.636536, y: 0, z: -13.070487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388596583815700}
@@ -1330,7 +1331,7 @@ Transform:
   - {fileID: 4907605347408658}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -85.285, z: 0}
 --- !u!4 &4962514885412186
 Transform:
   m_ObjectHideFlags: 1
@@ -1371,6 +1372,19 @@ Transform:
   m_Father: {fileID: 4016398349323206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &136651507253161564
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!137 &137019152055662498
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

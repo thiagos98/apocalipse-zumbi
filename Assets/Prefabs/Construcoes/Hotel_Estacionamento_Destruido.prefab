@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4125756474897914}
   - component: {fileID: 33482404618427184}
   - component: {fileID: 23172445707468256}
+  - component: {fileID: 135815132839892018}
+  - component: {fileID: 135688913286497002}
+  - component: {fileID: 65944111134784698}
   m_Layer: 0
   m_Name: Hotel_Estacionamento_Destruido
   m_TagString: Untagged
@@ -80,3 +83,39 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715417175653746}
   m_Mesh: {fileID: 4300000, guid: b1774bd68b7e19545aa0aa03f5d6a8ec, type: 3}
+--- !u!65 &65944111134784698
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715417175653746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 58.916443, y: 0.21, z: 45.2812}
+  m_Center: {x: -29.458221, y: -0.1, z: -22.640265}
+--- !u!135 &135688913286497002
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715417175653746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: -36.25, y: -0.42279413, z: -25.3}
+--- !u!135 &135815132839892018
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715417175653746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: -13.57, y: -0.42279413, z: -10.3}

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4077054497250850}
   - component: {fileID: 33461042048650664}
   - component: {fileID: 23126996265355288}
+  - component: {fileID: 64602419947103760}
   m_Layer: 0
   m_Name: SA_Bld_Motel_SideBuilding_Growth_01
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4884062526212570}
   - component: {fileID: 33899056959632438}
   - component: {fileID: 23547142919696886}
+  - component: {fileID: 65593197312837930}
   m_Layer: 0
   m_Name: Hotel_Secundario_Destruido
   m_TagString: Untagged
@@ -95,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253322267395956}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -53, y: 0, z: -20.6}
+  m_LocalPosition: {x: -53, y: 0, z: -20.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4079530644792040}
@@ -220,3 +222,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253322267395956}
   m_Mesh: {fileID: 4300000, guid: 833a86cb485eddc408c979d6e2f581c3, type: 3}
+--- !u!64 &64602419947103760
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221897393757558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 833a86cb485eddc408c979d6e2f581c3, type: 3}
+--- !u!65 &65593197312837930
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253322267395956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37.065468, y: 5.3428125, z: 9.903553}
+  m_Center: {x: -0.16184239, y: 2.6714058, z: 0.7580387}

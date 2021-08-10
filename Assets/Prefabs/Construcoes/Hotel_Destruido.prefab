@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4899096894434286}
   - component: {fileID: 33211421741956862}
   - component: {fileID: 23093305736669630}
+  - component: {fileID: 64040517107783334}
   m_Layer: 0
   m_Name: SA_Bld_Motel_Damaged_Growth_01
   m_TagString: Untagged
@@ -55,6 +56,8 @@ GameObject:
   - component: {fileID: 4601257169376040}
   - component: {fileID: 33263147119861308}
   - component: {fileID: 23482915198392172}
+  - component: {fileID: 65026009298895804}
+  - component: {fileID: 65137758560302226}
   m_Layer: 0
   m_Name: Hotel_Destruido
   m_TagString: Untagged
@@ -82,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817231605172722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.5, y: 0.04157877, z: -37.057335}
+  m_LocalPosition: {x: -23.5, y: 0, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4022060004095404}
@@ -220,3 +223,41 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008105776831776}
   m_Mesh: {fileID: 4300004, guid: d79cb0350f78f2c4ca9d2bd41118bf2a, type: 3}
+--- !u!64 &64040517107783334
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258292203499732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: d79cb0350f78f2c4ca9d2bd41118bf2a, type: 3}
+--- !u!65 &65026009298895804
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817231605172722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 45.723274, y: 11.958488, z: 9.221037}
+  m_Center: {x: 0.04279709, y: 5.2166243, z: -1.9455442}
+--- !u!65 &65137758560302226
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817231605172722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 0.5295696, z: 7.3}
+  m_Center: {x: 18.34, y: 0.53, z: 4.07}
