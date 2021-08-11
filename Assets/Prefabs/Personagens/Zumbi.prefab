@@ -115,8 +115,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4941635705825534}
   - component: {fileID: 136651507253161564}
-  - component: {fileID: 95356866220325798}
   - component: {fileID: 114725462426066828}
+  - component: {fileID: 95356866220325798}
   - component: {fileID: 54102922310651720}
   m_Layer: 0
   m_Name: Zumbi

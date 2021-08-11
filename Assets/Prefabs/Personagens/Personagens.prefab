@@ -1732,6 +1732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mSpeed: 4
+  FloorMask:
+    serializedVersion: 2
+    m_Bits: 256
+  TextGameOver: {fileID: 0}
 --- !u!136 &136139758304161388
 CapsuleCollider:
   m_ObjectHideFlags: 1

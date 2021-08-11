@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private Animator _mAnimator;
     private Rigidbody _mRigidbody;
     private Vector3 _mDirection;
+    public LayerMask FloorMask;
 
     private void Start()
     {
@@ -32,5 +33,20 @@ public class PlayerController : MonoBehaviour
         _mRigidbody.MovePosition
             (_mRigidbody.position +
             (_mDirection * (Time.deltaTime * _mSpeed)));
+
+        Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit impact;
+
+        if(Physics.Raycast(raio, out impact, 50, FloorMask))
+        {
+            Vector3 playerAimPosition = impact.point - transform.position;
+
+            playerAimPosition.y = transform.position.y;
+
+            Quaternion newRotation = Quaternion.LookRotation(playerAimPosition);
+
+            _mRigidbody.MoveRotation(newRotation);
+        }
     }
 }

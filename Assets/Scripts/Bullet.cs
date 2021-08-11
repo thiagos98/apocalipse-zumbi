@@ -14,4 +14,14 @@ public class Bullet : MonoBehaviour {
     void FixedUpdate () {
         _mRig.MovePosition(_mRig.position + (transform.forward * Speed * Time.deltaTime));
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Inimigo"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        Destroy(gameObject);
+    }
 }
