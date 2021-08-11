@@ -121,7 +121,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -192,6 +192,25 @@ Prefab:
     - target: {fileID: 4941635705825534, guid: 35861510587b7489780fe86970823679, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 942990022}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 942990022}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 2}
@@ -340,24 +359,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a,
     type: 2}
   m_PrefabInternal: {fileID: 126028681}
---- !u!1 &982790311 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679,
-    type: 2}
-  m_PrefabInternal: {fileID: 1977139990}
---- !u!136 &982790312
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 982790311}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 3
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &1080151173
 Prefab:
   m_ObjectHideFlags: 0
@@ -404,6 +405,25 @@ Prefab:
     - target: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
       propertyPath: m_Name
       value: Zumbi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 942990022}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 942990022}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 2}
@@ -685,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a090f86cbaf61e4589594cad15dbb35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 942990022}
+  player: {fileID: 942990022}
 --- !u!1001 &1977139990
 Prefab:
   m_ObjectHideFlags: 0
@@ -725,13 +745,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 4941635705825534, guid: 35861510587b7489780fe86970823679, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -117.41701
-      objectReference: {fileID: 0}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 942990022}
     - target: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
       propertyPath: m_Name
       value: Zumbi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 942990022}
+    - target: {fileID: 114725462426066828, guid: 35861510587b7489780fe86970823679,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 2}

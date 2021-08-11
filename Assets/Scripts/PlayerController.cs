@@ -2,15 +2,15 @@
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] float m_Speed;
-    private Animator m_Animator;
-    private Rigidbody m_Rigidbody;
-    private Vector3 direction;
+	[SerializeField] private float mSpeed;
+    private Animator _mAnimator;
+    private Rigidbody _mRigidbody;
+    private Vector3 _direction;
 
     private void Start()
     {
-        m_Animator = GetComponent<Animator>();
-        m_Rigidbody = GetComponent<Rigidbody>();
+        _mAnimator = GetComponent<Animator>();
+        _mRigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update ()
@@ -18,26 +18,19 @@ public class PlayerController : MonoBehaviour
 		var axisX = Input.GetAxis("Horizontal");
 		var axisZ = Input.GetAxis("Vertical");
 		
-		direction = new Vector3(axisX, 0, axisZ);
+		_direction = new Vector3(axisX, 0, axisZ);
 
-        m_Rigidbody.MovePosition
-            (m_Rigidbody.position + 
-            (direction * (Time.deltaTime * m_Speed)));
+        _mRigidbody.MovePosition
+            (_mRigidbody.position + 
+            (_direction * (Time.deltaTime * mSpeed)));
 
-        if(direction != Vector3.zero)
-        {
-            m_Animator.SetBool("isMove", true);
-        }
-        else
-        {
-            m_Animator.SetBool("isMove", false);
-        }
+        _mAnimator.SetBool("isMove", _direction != Vector3.zero);
     }
 
     private void FixedUpdate()
     {
-        m_Rigidbody.MovePosition
-            (m_Rigidbody.position +
-            (direction * (Time.deltaTime * m_Speed)));
+        _mRigidbody.MovePosition
+            (_mRigidbody.position +
+            (_direction * (Time.deltaTime * mSpeed)));
     }
 }

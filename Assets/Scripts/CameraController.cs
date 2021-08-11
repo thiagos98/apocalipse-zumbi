@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    [SerializeField] GameObject m_Player;
-    private Vector3 m_DistCompensar;
+    [SerializeField] private GameObject player;
+    private Vector3 _mDistCompensar;
 
 	void Start () {
-        m_DistCompensar = transform.position - m_Player.transform.position;
+        _mDistCompensar = transform.position - player.transform.position;
 	}
 	
 	void Update () {
-        transform.position = m_Player.transform.position + m_DistCompensar;
+        transform.position = player.transform.position + _mDistCompensar;
 	}
 }
