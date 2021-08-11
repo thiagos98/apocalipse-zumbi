@@ -2,10 +2,10 @@
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] private float mSpeed;
+	[SerializeField] private float _mSpeed;
     private Animator _mAnimator;
     private Rigidbody _mRigidbody;
-    private Vector3 _direction;
+    private Vector3 _mDirection;
 
     private void Start()
     {
@@ -18,19 +18,19 @@ public class PlayerController : MonoBehaviour
 		var axisX = Input.GetAxis("Horizontal");
 		var axisZ = Input.GetAxis("Vertical");
 		
-		_direction = new Vector3(axisX, 0, axisZ);
+		_mDirection = new Vector3(axisX, 0, axisZ);
 
         _mRigidbody.MovePosition
             (_mRigidbody.position + 
-            (_direction * (Time.deltaTime * mSpeed)));
+            (_mDirection * (Time.deltaTime * _mSpeed)));
 
-        _mAnimator.SetBool("isMove", _direction != Vector3.zero);
+        _mAnimator.SetBool("isMove", _mDirection != Vector3.zero);
     }
 
     private void FixedUpdate()
     {
         _mRigidbody.MovePosition
             (_mRigidbody.position +
-            (_direction * (Time.deltaTime * mSpeed)));
+            (_mDirection * (Time.deltaTime * _mSpeed)));
     }
 }
