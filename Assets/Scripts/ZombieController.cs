@@ -6,13 +6,11 @@ public class ZombieController : MonoBehaviour
 	private Rigidbody _mRig;
     private Animator _mAnim;
 	private Vector3 _mDirection;
-    public GameObject GameController;
     public float Speed;
 
 	private void Start ()
     {
         player = GameObject.FindWithTag("Player");
-        GameController = GameObject.FindWithTag("GameController");
 		_mRig = GetComponent<Rigidbody>();
         _mAnim = GetComponent<Animator>();
 
@@ -43,8 +41,6 @@ public class ZombieController : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Time.timeScale = 0;
-
-        GameController.GetComponent<GameController>().SetPanelGameOver(true);
+        player.GetComponent<PlayerController>().TakeDamage();
     }
 }
