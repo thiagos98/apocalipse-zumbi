@@ -8,13 +8,21 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _mRigidbody;
     private Vector3 _mDirection;
     public LayerMask FloorMask;
-    public GameObject GameController;
+    public GameController GameController;
+    public InterfaceController InterfaceController;
+
+    public int MLife
+    {
+        get { return mLife; }
+        set { mLife = value; }
+    }
 
     private void Start()
     {
         _mAnimator = GetComponent<Animator>();
         _mRigidbody = GetComponent<Rigidbody>();
-        GameController = GameObject.FindWithTag("GameController");
+        GameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        InterfaceController = GameObject.FindWithTag("Canvas").GetComponent<InterfaceController>();
     }
 
     private void Update()
@@ -23,11 +31,7 @@ public class PlayerController : MonoBehaviour
         var axisZ = Input.GetAxis("Vertical");
 
         _mDirection = new Vector3(axisX, 0, axisZ);
-
-        _mRigidbody.MovePosition
-        (_mRigidbody.position +
-         (_mDirection * (Time.deltaTime * mSpeed)));
-
+        
         _mAnimator.SetBool("isMove", _mDirection != Vector3.zero);
     }
 
@@ -51,11 +55,14 @@ public class PlayerController : MonoBehaviour
         _mRigidbody.MoveRotation(newRotation);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damageEnemy)
     {
-        mLife -= 20;
+        mLife -= damageEnemy;
+        InterfaceController.UpdateSliderLifePlayer();
         if (mLife > 0) return;
         Time.timeScale = 0;
-        GameController.GetComponent<GameController>().SetPanelGameOver(true);
+        GameController.SetPanelGameOver(true);
     }
+    
+    
 }

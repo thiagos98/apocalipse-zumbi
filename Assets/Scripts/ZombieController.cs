@@ -3,23 +3,24 @@
 public class ZombieController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-	private Rigidbody _mRig;
+    private Rigidbody _mRig;
     private Animator _mAnim;
-	private Vector3 _mDirection;
+    private Vector3 _mDirection;
+    private int _mDamage;
     public float Speed;
 
-	private void Start ()
+    private void Start()
     {
         player = GameObject.FindWithTag("Player");
-		_mRig = GetComponent<Rigidbody>();
+        _mRig = GetComponent<Rigidbody>();
         _mAnim = GetComponent<Animator>();
 
         var generateTypeZombie = Random.Range(1, 28);
         transform.GetChild(generateTypeZombie).gameObject.SetActive(true);
     }
 
-	private void FixedUpdate()
-	{
+    private void FixedUpdate()
+    {
         var distance = Vector3.Distance(transform.position, player.transform.position);
 
         _mDirection = player.transform.position - transform.position;
@@ -41,6 +42,7 @@ public class ZombieController : MonoBehaviour
 
     private void AttackPlayer()
     {
-        player.GetComponent<PlayerController>().TakeDamage();
+        _mDamage = Random.Range(20, 30);
+        player.GetComponent<PlayerController>().TakeDamage(_mDamage);
     }
 }
