@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject player;
     private Vector3 _mDistCompensar;
 
-	void Start () {
-        _mDistCompensar = transform.position - Player.transform.position;
+    private void Start () {
+        _mDistCompensar = transform.position - player.transform.position;
 	}
-	
-	void Update () {
-        transform.position = Player.transform.position + _mDistCompensar;
+
+    private void Update () {
+        transform.position = player.transform.position + _mDistCompensar;
 	}
 }

@@ -1718,8 +1718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fea8f75ef8e354c8225b3e6921ecdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mBullet: {fileID: 1307414849229118, guid: 68fdd003186eddf45bf878066ee689e9, type: 2}
-  _mGunBarrel: {fileID: 1639748191958662}
+  mBullet: {fileID: 1307414849229118, guid: 68fdd003186eddf45bf878066ee689e9, type: 2}
+  mGunBarrel: {fileID: 1639748191958662}
 --- !u!114 &114553556339556296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1731,11 +1731,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4e024185ce6be4792a0e71463e1335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mSpeed: 4
+  mSpeed: 4
   FloorMask:
     serializedVersion: 2
     m_Bits: 256
-  TextGameOver: {fileID: 0}
 --- !u!136 &136139758304161388
 CapsuleCollider:
   m_ObjectHideFlags: 1

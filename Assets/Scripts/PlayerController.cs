@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] private float _mSpeed;
+	[SerializeField] private float mSpeed;
     private Animator _mAnimator;
     private Rigidbody _mRigidbody;
     private Vector3 _mDirection;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
         _mRigidbody.MovePosition
             (_mRigidbody.position + 
-            (_mDirection * (Time.deltaTime * _mSpeed)));
+            (_mDirection * (Time.deltaTime * mSpeed)));
 
         _mAnimator.SetBool("isMove", _mDirection != Vector3.zero);
     }
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         _mRigidbody.MovePosition
             (_mRigidbody.position +
-            (_mDirection * (Time.deltaTime * _mSpeed)));
+            (_mDirection * (Time.deltaTime * mSpeed)));
 
         Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
 

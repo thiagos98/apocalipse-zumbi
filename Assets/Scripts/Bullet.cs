@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour {
     private Rigidbody _mRig;
@@ -11,8 +9,8 @@ public class Bullet : MonoBehaviour {
         _mRig = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate () {
-        _mRig.MovePosition(_mRig.position + (transform.forward * Speed * Time.deltaTime));
+    private void FixedUpdate () {
+        _mRig.MovePosition(_mRig.position + (transform.forward * (Speed * Time.deltaTime)));
 	}
 
     private void OnTriggerEnter(Collider other)

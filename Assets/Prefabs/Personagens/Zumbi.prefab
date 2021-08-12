@@ -115,9 +115,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4941635705825534}
   - component: {fileID: 136651507253161564}
-  - component: {fileID: 114725462426066828}
   - component: {fileID: 95356866220325798}
   - component: {fileID: 54102922310651720}
+  - component: {fileID: 114587135206206190}
   m_Layer: 0
   m_Name: Zumbi
   m_TagString: Inimigo
@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1385381977519954
 GameObject:
   m_ObjectHideFlags: 1
@@ -1407,7 +1407,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114725462426066828
+--- !u!114 &114587135206206190
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1418,7 +1418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b51d24e81235842ac495e7cf88948a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
+  GameController: {fileID: 0}
   Speed: 3
 --- !u!136 &136651507253161564
 CapsuleCollider:

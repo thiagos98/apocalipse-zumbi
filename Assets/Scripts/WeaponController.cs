@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponController : MonoBehaviour {
-    [SerializeField] private GameObject _mBullet;
-    [SerializeField] private GameObject _mGunBarrel;
+    [SerializeField] private GameObject mBullet;
+    [SerializeField] private GameObject mGunBarrel;
 
-    void Start () {
-		
-	}
-	
-	void Update () {
+    private void Update () {
 	    if(Input.GetButtonDown("Fire1"))
         {
-            Instantiate(_mBullet, _mGunBarrel.transform.position, _mGunBarrel.transform.rotation);
+            Instantiate(mBullet, mGunBarrel.transform.position, mGunBarrel.transform.rotation);
         }
 	}
 }
