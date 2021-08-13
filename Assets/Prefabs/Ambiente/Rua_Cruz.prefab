@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4641023299484320}
   - component: {fileID: 33038226351527168}
   - component: {fileID: 23757152075561594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Cruz
   m_TagString: Untagged
   m_Icon: {fileID: 0}

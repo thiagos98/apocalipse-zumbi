@@ -3,6 +3,8 @@
 public class Bullet : MonoBehaviour {
     private Rigidbody _mRig;
     public float Speed;
+    [SerializeField] private AudioClip zombieDeathSound;
+
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class Bullet : MonoBehaviour {
     {
         if(other.CompareTag("Inimigo"))
         {
+            AudioController.Instance.PlayOneShot(zombieDeathSound);
             Destroy(gameObject);
             Destroy(other.gameObject);
         }

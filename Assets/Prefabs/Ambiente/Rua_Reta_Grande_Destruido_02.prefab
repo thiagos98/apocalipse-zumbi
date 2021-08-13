@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4308355760854306}
   - component: {fileID: 33739850627647484}
   - component: {fileID: 23613356500937630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Reta_Grande_Destruido_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

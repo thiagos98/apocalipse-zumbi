@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
+  zombieDeathSound: {fileID: 8300000, guid: df29bda1a6716ab4691bf17874d98489, type: 3}

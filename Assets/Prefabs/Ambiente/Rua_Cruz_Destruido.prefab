@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4650744448952284}
   - component: {fileID: 33987102681776512}
   - component: {fileID: 23127322977858660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Cruz_Destruido
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4622325624874030}
   - component: {fileID: 33044440178957554}
   - component: {fileID: 23194266218808994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Destruido
   m_TagString: Untagged
   m_Icon: {fileID: 0}

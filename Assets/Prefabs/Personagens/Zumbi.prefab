@@ -1419,7 +1419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
-  GameController: {fileID: 0}
   Speed: 3
 --- !u!136 &136651507253161564
 CapsuleCollider:

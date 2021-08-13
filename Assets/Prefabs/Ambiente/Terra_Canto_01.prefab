@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4508136926089888}
   - component: {fileID: 33047761520940670}
   - component: {fileID: 23718291607982732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terra_Canto_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

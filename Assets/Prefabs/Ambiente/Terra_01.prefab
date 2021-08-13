@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4517415649865884}
   - component: {fileID: 33333437795132158}
   - component: {fileID: 23129601624350176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terra_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

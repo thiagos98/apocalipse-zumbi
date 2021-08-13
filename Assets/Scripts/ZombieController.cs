@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ZombieController : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class ZombieController : MonoBehaviour
     private Vector3 _mDirection;
     private int _mDamage;
     public float Speed;
-
+    
     private void Start()
     {
         player = GameObject.FindWithTag("Player");

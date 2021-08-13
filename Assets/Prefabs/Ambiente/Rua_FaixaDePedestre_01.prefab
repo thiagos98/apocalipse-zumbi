@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4995183199894934}
   - component: {fileID: 33685958817705342}
   - component: {fileID: 23691380129191702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_FaixaDePedestre_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask FloorMask;
     public GameController GameController;
     public InterfaceController InterfaceController;
+    [SerializeField] private AudioClip damageSound;
 
     public int MLife
     {
@@ -59,6 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         mLife -= damageEnemy;
         InterfaceController.UpdateSliderLifePlayer();
+        AudioController.Instance.PlayOneShot(damageSound);
+        
         if (mLife > 0) return;
         Time.timeScale = 0;
         GameController.SetPanelGameOver(true);

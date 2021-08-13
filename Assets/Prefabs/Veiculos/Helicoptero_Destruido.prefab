@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4577945250690642}
   - component: {fileID: 33299633824298016}
   - component: {fileID: 23221529912317802}
-  m_Layer: 0
+  - component: {fileID: 65905436744489134}
+  m_Layer: 8
   m_Name: Helicoptero_Destruido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788063535671322}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.8042635, z: -0, w: 0.594273}
+  m_LocalPosition: {x: -23.178394, y: -1.15, z: -53.426426}
+  m_LocalScale: {x: 1.715081, y: 1.7150806, z: 1.7150806}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 107.078, z: 0}
 --- !u!23 &23221529912317802
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -80,3 +81,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788063535671322}
   m_Mesh: {fileID: 4300000, guid: d44e47a016fc9504689b72992098bb66, type: 3}
+--- !u!65 &65905436744489134
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788063535671322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.904604, y: 5.2769575, z: 11.5616455}
+  m_Center: {x: 0.12944289, y: 2.6135669, z: -2.5447218}

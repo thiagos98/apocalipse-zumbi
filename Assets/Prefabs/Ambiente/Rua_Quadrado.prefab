@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4730407008843400}
   - component: {fileID: 33219562120163698}
   - component: {fileID: 23513122938966514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Quadrado
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mBullet: {fileID: 1307414849229118, guid: 68fdd003186eddf45bf878066ee689e9, type: 2}
   mGunBarrel: {fileID: 1639748191958662}
+  gunShotSound: {fileID: 8300000, guid: cd6c60682b40dde4084e4c014b35e3e7, type: 3}
 --- !u!114 &114553556339556296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,6 +1738,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   GameController: {fileID: 0}
+  InterfaceController: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: ef44e73677c7e6945bf0048777f7de30, type: 3}
 --- !u!136 &136139758304161388
 CapsuleCollider:
   m_ObjectHideFlags: 1

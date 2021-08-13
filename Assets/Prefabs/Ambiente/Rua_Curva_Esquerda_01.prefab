@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4078694691818406}
   - component: {fileID: 33786686654467604}
   - component: {fileID: 23508624516223358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Curva_Esquerda_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

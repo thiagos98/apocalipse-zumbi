@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4748218072112664}
   - component: {fileID: 33571407626955658}
   - component: {fileID: 23418048928496590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}

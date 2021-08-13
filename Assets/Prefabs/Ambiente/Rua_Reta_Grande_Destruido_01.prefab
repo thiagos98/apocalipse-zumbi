@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4120499531812746}
   - component: {fileID: 33127943443361040}
   - component: {fileID: 23388550557154684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rua_Reta_Grande_Destruido_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280456209958610}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 19.995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
