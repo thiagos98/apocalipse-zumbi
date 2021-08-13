@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4858113213163598}
   - component: {fileID: 33847675563016430}
   - component: {fileID: 23295723443710478}
+  - component: {fileID: 65609944920976296}
   m_Layer: 0
   m_Name: Barril_01
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240018967989942}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.932665, y: 0.027553797, z: 49.91719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,3 +81,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240018967989942}
   m_Mesh: {fileID: 4300000, guid: c4c345791594b644091b803fa7671f1c, type: 3}
+--- !u!65 &65609944920976296
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240018967989942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1279907, y: 2.8534806, z: 2.1279907}
+  m_Center: {x: 0, y: 1.3991865, z: 0}
