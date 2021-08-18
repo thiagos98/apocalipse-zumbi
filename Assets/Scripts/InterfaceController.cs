@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class InterfaceController : MonoBehaviour
 {
 	private PlayerController _playerController;
-	public Slider SliderLifePlayer; 
+	[FormerlySerializedAs("SliderLifePlayer")] public Slider sliderLifePlayer; 
 	private void Start ()
 	{
-		_playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-		SliderLifePlayer.maxValue = _playerController.MLife;
+		_playerController = GameObject.FindWithTag(Tags.Player).GetComponent<PlayerController>();
+		sliderLifePlayer.maxValue = _playerController.statusPlayer.mLife;
 		UpdateSliderLifePlayer();
 	}
 
 	public void UpdateSliderLifePlayer()
 	{
-		SliderLifePlayer.value = _playerController.MLife;
+		sliderLifePlayer.value = _playerController.statusPlayer.mLife;
 	}
 }

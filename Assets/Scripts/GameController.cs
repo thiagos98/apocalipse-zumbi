@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour {
-    public GameObject PanelGameOver;
+    [FormerlySerializedAs("PanelGameOver")] public GameObject panelGameOver;
 
     private void Start()
     {
@@ -16,6 +17,6 @@ public class GameController : MonoBehaviour {
 
     public void SetPanelGameOver(bool other)
     {
-        PanelGameOver.SetActive(other);
+        panelGameOver.SetActive(other);
     }
 }

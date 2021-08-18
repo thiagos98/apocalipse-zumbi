@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ZombieGenerator : MonoBehaviour
 {
-	public GameObject Zombie;
+	[FormerlySerializedAs("Zombie")] public GameObject zombie;
 	private float _mTimeCounter = 0f;
-	public float TimeToGenerateZombie = 1f;
+	[FormerlySerializedAs("TimeToGenerateZombie")] public float timeToGenerateZombie = 1f;
 
 	private void Update ()
 	{
 		_mTimeCounter += Time.deltaTime;
 
-		if (!(_mTimeCounter >= TimeToGenerateZombie)) return;
+		if (!(_mTimeCounter >= timeToGenerateZombie)) return;
 		
-		Instantiate(Zombie, transform.position, transform.rotation);
+		Instantiate(zombie, transform.position, transform.rotation);
 		_mTimeCounter = 0f;
 
 	}

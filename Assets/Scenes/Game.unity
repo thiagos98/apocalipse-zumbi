@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ab27bec5ee8b4c9aace70b813922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelGameOver: {fileID: 1011613575}
+  panelGameOver: {fileID: 1011613575}
 --- !u!4 &61060797
 Transform:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -26.12
+      value: -23.68
       objectReference: {fileID: 0}
     - target: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1564,24 +1564,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114553556339556296, guid: 4b3bb44effa49480d8d18049684cc33a,
-        type: 2}
-      propertyPath: GameController
-      value: 
-      objectReference: {fileID: 61060796}
-    - target: {fileID: 114553556339556296, guid: 4b3bb44effa49480d8d18049684cc33a,
-        type: 2}
-      propertyPath: InterfaceController
-      value: 
-      objectReference: {fileID: 400452151}
     - target: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
       propertyPath: m_Name
       value: Jogador
-      objectReference: {fileID: 0}
-    - target: {fileID: 114553556339556296, guid: 4b3bb44effa49480d8d18049684cc33a,
-        type: 2}
-      propertyPath: mSpeed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
@@ -3046,8 +3031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ad28b4189cc64781167fa0eb909e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
-  TimeToGenerateZombie: 2
+  zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+  timeToGenerateZombie: 1
 --- !u!4 &286604863
 Transform:
   m_ObjectHideFlags: 0
@@ -4247,12 +4232,12 @@ Prefab:
     - target: {fileID: 65026009298895804, guid: 0a66f57f75c04e64f8c6f83bc38f1946,
         type: 2}
       propertyPath: m_Size.z
-      value: 17.234432
+      value: 13.559372
       objectReference: {fileID: 0}
     - target: {fileID: 65026009298895804, guid: 0a66f57f75c04e64f8c6f83bc38f1946,
         type: 2}
       propertyPath: m_Center.z
-      value: 1.0472164
+      value: -0.7903137
       objectReference: {fileID: 0}
     - target: {fileID: 65026009298895804, guid: 0a66f57f75c04e64f8c6f83bc38f1946,
         type: 2}
@@ -4530,7 +4515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e021105c48388ff46b2d35af7b0f2927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderLifePlayer: {fileID: 1643716310}
+  sliderLifePlayer: {fileID: 1643716310}
 --- !u!1001 &406806077
 Prefab:
   m_ObjectHideFlags: 0
@@ -9017,6 +9002,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a,
     type: 2}
   m_PrefabInternal: {fileID: 126028681}
+--- !u!114 &942990023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942990022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a989db7c433f25844807740ce960271a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialLife: 100
+  mLife: 0
+  mSpeed: 10
 --- !u!4 &947596796 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4868256201905178, guid: 50fc901e811e74c10ada7234ed22eb14,
@@ -11395,8 +11394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ad28b4189cc64781167fa0eb909e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
-  TimeToGenerateZombie: 1.5
+  zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+  timeToGenerateZombie: 1
 --- !u!4 &1213830864
 Transform:
   m_ObjectHideFlags: 0
@@ -11952,8 +11951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ad28b4189cc64781167fa0eb909e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
-  TimeToGenerateZombie: 2.5
+  zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+  timeToGenerateZombie: 1
 --- !u!4 &1251056631
 Transform:
   m_ObjectHideFlags: 0
@@ -17331,7 +17330,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1737154475}
   m_LocalRotation: {x: 0.49540702, y: -0, z: -0, w: 0.868661}
-  m_LocalPosition: {x: -27.099428, y: 12.29, z: -32.14}
+  m_LocalPosition: {x: -27.099428, y: 12.29, z: -29.699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17874,8 +17873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ad28b4189cc64781167fa0eb909e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
-  TimeToGenerateZombie: 3
+  zombie: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+  timeToGenerateZombie: 1
 --- !u!4 &1790634410
 Transform:
   m_ObjectHideFlags: 0

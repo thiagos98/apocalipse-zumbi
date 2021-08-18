@@ -118,6 +118,9 @@ GameObject:
   - component: {fileID: 95356866220325798}
   - component: {fileID: 54102922310651720}
   - component: {fileID: 114587135206206190}
+  - component: {fileID: 114503013714943022}
+  - component: {fileID: 114375021087160120}
+  - component: {fileID: 114962083425846984}
   m_Layer: 0
   m_Name: Zumbi
   m_TagString: Inimigo
@@ -1407,6 +1410,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114375021087160120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91190f0fcc7bf0945b1d25c1a2cf8380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114503013714943022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629ca669230dd074bb45822b5f8c7656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114587135206206190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,7 +1444,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
-  Speed: 3
+  zombieDeathSound: {fileID: 8300000, guid: df29bda1a6716ab4691bf17874d98489, type: 3}
+--- !u!114 &114962083425846984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a989db7c433f25844807740ce960271a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialLife: 100
+  mLife: 0
+  mSpeed: 5
 --- !u!136 &136651507253161564
 CapsuleCollider:
   m_ObjectHideFlags: 1

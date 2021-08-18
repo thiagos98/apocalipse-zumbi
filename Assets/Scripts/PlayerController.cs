@@ -1,30 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IKillable
 {
-    [SerializeField] private float mSpeed;
-    [SerializeField] private int mLife;
-    private Animator _mAnimator;
-    private Rigidbody _mRigidbody;
-    private Vector3 _mDirection;
-    public LayerMask FloorMask;
-    public GameController GameController;
-    public InterfaceController InterfaceController;
+    [SerializeField] private LayerMask floorMask;
     [SerializeField] private AudioClip damageSound;
-
-    public int MLife
+    private Vector3 _mDirection;
+    private GameController _gameController;
+    private InterfaceController _interfaceController;
+    private MovementPlayer _movementPlayer;
+    private AnimationCharacters _animationCharacters;
+    public Status statusPlayer;
+    
+    private void Awake()
     {
-        get { return mLife; }
-        set { mLife = value; }
-    }
-
-    private void Start()
-    {
-        _mAnimator = GetComponent<Animator>();
-        _mRigidbody = GetComponent<Rigidbody>();
-        GameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-        InterfaceController = GameObject.FindWithTag("Canvas").GetComponent<InterfaceController>();
+        statusPlayer = GetComponent<Status>();
+        _movementPlayer = GetComponent<MovementPlayer>();
+        _animationCharacters = GetComponent<AnimationCharacters>();
+        _gameController = GameObject.FindWithTag(Tags.GameController).GetComponent<GameController>();
+        _interfaceController = GameObject.FindWithTag(Tags.Canvas).GetComponent<InterfaceController>();
     }
 
     private void Update()
@@ -34,39 +28,30 @@ public class PlayerController : MonoBehaviour
 
         _mDirection = new Vector3(axisX, 0, axisZ);
         
-        _mAnimator.SetBool("isMove", _mDirection != Vector3.zero);
+        _animationCharacters.Move(_mDirection.magnitude);
     }
 
     private void FixedUpdate()
     {
-        _mRigidbody.MovePosition
-        (_mRigidbody.position +
-         (_mDirection * (Time.deltaTime * mSpeed)));
+        _movementPlayer.Move(_mDirection, statusPlayer.mSpeed);
 
-        Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit impact;
-
-        if (!Physics.Raycast(raio, out impact, 50, FloorMask)) return;
-        Vector3 playerAimPosition = impact.point - transform.position;
-
-        playerAimPosition.y = transform.position.y;
-
-        Quaternion newRotation = Quaternion.LookRotation(playerAimPosition);
-
-        _mRigidbody.MoveRotation(newRotation);
+        _movementPlayer.PlayerRotation(floorMask);
     }
 
     public void TakeDamage(int damageEnemy)
     {
-        mLife -= damageEnemy;
-        InterfaceController.UpdateSliderLifePlayer();
+        statusPlayer.mLife -= damageEnemy;
+        _interfaceController.UpdateSliderLifePlayer();
         AudioController.Instance.PlayOneShot(damageSound);
         
-        if (mLife > 0) return;
-        Time.timeScale = 0;
-        GameController.SetPanelGameOver(true);
+        if (statusPlayer.mLife > 0) return;
+        Die();
     }
-    
-    
+
+    public void Die()
+    {
+        Time.timeScale = 0;
+        _gameController.SetPanelGameOver(true);
+    }
+
 }

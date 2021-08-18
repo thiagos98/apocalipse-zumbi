@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour {
     private Rigidbody _mRig;
-    public float Speed;
-    [SerializeField] private AudioClip zombieDeathSound;
+    public int damage;
+    public float speed;
 
 
     private void Start()
@@ -12,16 +13,14 @@ public class Bullet : MonoBehaviour {
     }
 
     private void FixedUpdate () {
-        _mRig.MovePosition(_mRig.position + (transform.forward * (Speed * Time.deltaTime)));
+        _mRig.MovePosition(_mRig.position + (transform.forward * (speed * Time.deltaTime)));
 	}
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Inimigo"))
         {
-            AudioController.Instance.PlayOneShot(zombieDeathSound);
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            other.GetComponent<ZombieController>().TakeDamage(damage);
         }
         Destroy(gameObject);
     }
