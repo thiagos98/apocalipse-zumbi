@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 114503013714943022}
   - component: {fileID: 114375021087160120}
   - component: {fileID: 114962083425846984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zumbi
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialLife: 100
   mLife: 0
-  mSpeed: 5
+  mSpeed: 4
 --- !u!136 &136651507253161564
 CapsuleCollider:
   m_ObjectHideFlags: 1

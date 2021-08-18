@@ -10,7 +10,10 @@ public class ZombieController : MonoBehaviour, IKillable
     private MovementCharacters _mMovement;
     private AnimationCharacters _mAnimation;
     private Status _mStatusZombie;
+    private Vector3 _mRandomPosition;
     public AudioClip zombieDeathSound;
+    private float _mWanderCounter;
+    private float _mTimeBetweenRandomPosition = 4;
     
     private void Start()
     {
@@ -26,21 +29,47 @@ public class ZombieController : MonoBehaviour, IKillable
         var positionPlayer = player.transform.position;
         var positionZombie = transform.position;
         var distance = Vector3.Distance(positionZombie, positionPlayer);
-
-        _mDirection = positionPlayer - positionZombie;
         
         _mMovement.Rotate(_mDirection);
-
-        if (distance > 2.5)
+        _mAnimation.Move(_mDirection.magnitude);
+        if (distance > 15)
         {
+            Wander();
+        }
+        else if (distance > 2.5)
+        {
+            _mDirection = positionPlayer - positionZombie;
             _mMovement.Move(_mDirection, _mStatusZombie.mSpeed);
-
             _mAnimation.Attack(false);
         }
         else
         {
             _mAnimation.Attack(true);
         }
+    }
+
+    private void Wander()
+    {
+        _mWanderCounter -= Time.deltaTime;
+
+        if (_mWanderCounter <= 0)
+        {
+            _mRandomPosition = RandomizePosition();
+            _mWanderCounter += _mTimeBetweenRandomPosition;
+        }
+
+        var itsClose = Vector3.Distance(transform.position, _mRandomPosition) <= 0.05;
+        if (itsClose) return;
+        _mDirection = _mRandomPosition - transform.position;
+        _mMovement.Move(_mDirection, _mStatusZombie.mSpeed);
+    }
+
+    private Vector3 RandomizePosition()
+    {
+        var position = Random.insideUnitSphere * Random.Range(10, 15);
+        position += transform.position;
+        position.y = transform.position.y;
+        return position;
     }
 
     private void AttackPlayer()
