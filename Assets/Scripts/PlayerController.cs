@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerController : MonoBehaviour, IKillable
+public class PlayerController : MonoBehaviour, IKillable, ICurable
 {
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private AudioClip damageSound;
@@ -45,11 +45,20 @@ public class PlayerController : MonoBehaviour, IKillable
         if (statusPlayer.mLife > 0) return;
         Die();
     }
-
+    
+    public void Heal(int cureAmount)
+    {
+        statusPlayer.mLife += cureAmount;
+        if (statusPlayer.mLife > statusPlayer.initialLife)
+        {
+            statusPlayer.mLife = statusPlayer.initialLife;
+        }
+        _gameController.UpdateLifePlayer();
+    }
+    
     public void Die()
     {
         GameController.SetTimeScale(0);
         _gameController.GameOver();
     }
-
 }

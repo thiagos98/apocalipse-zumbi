@@ -5,16 +5,18 @@ using Random = UnityEngine.Random;
 public class ZombieController : MonoBehaviour, IKillable
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject mMedKitPrefab;
     private Vector3 _mDirection;
     private int _mDamage;
     private MovementCharacters _mMovement;
     private AnimationCharacters _mAnimation;
     private Status _mStatusZombie;
     private Vector3 _mRandomPosition;
-    public AudioClip zombieDeathSound;
     private float _mWanderCounter;
     private float _mTimeBetweenRandomPosition = 4;
-    
+    private float _mGenerationPercentage = 0.1f;
+    public AudioClip zombieDeathSound;
+
     private void Start()
     {
         player = GameObject.FindWithTag(Tags.Player);
@@ -36,7 +38,7 @@ public class ZombieController : MonoBehaviour, IKillable
         {
             Wander();
         }
-        else if (distance > 2.5)
+        else if (distance > 2.5f)
         {
             _mDirection = positionPlayer - positionZombie;
             _mMovement.Move(_mDirection, _mStatusZombie.mSpeed);
@@ -59,7 +61,7 @@ public class ZombieController : MonoBehaviour, IKillable
             _mWanderCounter += _mTimeBetweenRandomPosition;
         }
 
-        var itsClose = Vector3.Distance(transform.position, _mRandomPosition) <= 0.05;
+        var itsClose = Vector3.Distance(transform.position, _mRandomPosition) <= 0.05f;
         if (itsClose) return;
         _mDirection = _mRandomPosition - transform.position;
         _mMovement.Move(_mDirection, _mStatusZombie.mSpeed);
@@ -96,5 +98,14 @@ public class ZombieController : MonoBehaviour, IKillable
     {
         AudioController.Instance.PlayOneShot(zombieDeathSound);
         Destroy(gameObject);
+        RandomGenerationMedKit(_mGenerationPercentage);
+    }
+
+    private void RandomGenerationMedKit(float generationPercentage)
+    {
+        if (Random.value <= generationPercentage)
+        {
+            Instantiate(mMedKitPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

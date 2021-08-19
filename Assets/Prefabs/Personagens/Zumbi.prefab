@@ -1444,6 +1444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 2}
+  mMedKitPrefab: {fileID: 1060151288946202, guid: 6150c6f66b7034ec5b3672478195682a,
+    type: 2}
   zombieDeathSound: {fileID: 8300000, guid: df29bda1a6716ab4691bf17874d98489, type: 3}
 --- !u!114 &114962083425846984
 MonoBehaviour:
@@ -1458,7 +1460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialLife: 100
   mLife: 0
-  mSpeed: 4
+  mSpeed: 5
 --- !u!136 &136651507253161564
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -9934,11 +9934,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
-        type: 2}
-      propertyPath: timeToGenerateZombie
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -11046,7 +11041,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -14683,7 +14678,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -15216,7 +15211,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -15405,7 +15400,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_Name
@@ -17763,7 +17758,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -19165,7 +19160,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -21088,7 +21083,7 @@ Prefab:
     - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
         type: 2}
       propertyPath: timeToGenerateZombie
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
