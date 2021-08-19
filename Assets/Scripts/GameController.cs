@@ -2,12 +2,12 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class GameController : MonoBehaviour {
-    [FormerlySerializedAs("PanelGameOver")] public GameObject panelGameOver;
-
-    private void Start()
+public class GameController : MonoBehaviour
+{
+    public InterfaceController interfaceController;
+    private void Awake()
     {
-        Time.timeScale = 1;
+        SetTimeScale(1);
     }
 
     public void RestartGame()
@@ -15,8 +15,18 @@ public class GameController : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void SetPanelGameOver(bool other)
+    public void GameOver()
     {
-        panelGameOver.SetActive(other);
+        interfaceController.GameOver();
+    }
+
+    public void UpdateLifePlayer()
+    {
+        interfaceController.UpdateSliderLifePlayer();
+    }
+
+    public static void SetTimeScale(int time)
+    {
+        Time.timeScale = time;
     }
 }

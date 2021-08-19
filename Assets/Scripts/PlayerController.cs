@@ -7,18 +7,16 @@ public class PlayerController : MonoBehaviour, IKillable
     [SerializeField] private AudioClip damageSound;
     private Vector3 _mDirection;
     private GameController _gameController;
-    private InterfaceController _interfaceController;
     private MovementPlayer _movementPlayer;
     private AnimationCharacters _animationCharacters;
-    public Status statusPlayer;
+    [HideInInspector] public Status statusPlayer;
     
-    private void Awake()
+    private void Start()
     {
         statusPlayer = GetComponent<Status>();
         _movementPlayer = GetComponent<MovementPlayer>();
         _animationCharacters = GetComponent<AnimationCharacters>();
         _gameController = GameObject.FindWithTag(Tags.GameController).GetComponent<GameController>();
-        _interfaceController = GameObject.FindWithTag(Tags.Canvas).GetComponent<InterfaceController>();
     }
 
     private void Update()
@@ -41,7 +39,7 @@ public class PlayerController : MonoBehaviour, IKillable
     public void TakeDamage(int damageEnemy)
     {
         statusPlayer.mLife -= damageEnemy;
-        _interfaceController.UpdateSliderLifePlayer();
+        _gameController.UpdateLifePlayer();
         AudioController.Instance.PlayOneShot(damageSound);
         
         if (statusPlayer.mLife > 0) return;
@@ -50,8 +48,8 @@ public class PlayerController : MonoBehaviour, IKillable
 
     public void Die()
     {
-        Time.timeScale = 0;
-        _gameController.SetPanelGameOver(true);
+        GameController.SetTimeScale(0);
+        _gameController.GameOver();
     }
 
 }

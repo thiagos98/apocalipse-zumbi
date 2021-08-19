@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ab27bec5ee8b4c9aace70b813922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 1011613575}
+  interfaceController: {fileID: 400452151}
 --- !u!4 &61060797
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,6 +1438,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4656246329960846, guid: bf4e53320739441f58d231c2ee884b66,
     type: 2}
   m_PrefabInternal: {fileID: 104152315}
+--- !u!1 &106036579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 106036580}
+  - component: {fileID: 106036582}
+  - component: {fileID: 106036581}
+  m_Layer: 5
+  m_Name: TimeSurvivedMax
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &106036580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106036579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1293245930}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000045776, y: 65.2}
+  m_SizeDelta: {x: 1073.5, y: 245.7}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &106036581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106036579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9191176, g: 0.41845018, b: 0.03379107, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2e89042c370795d4fba80c4c56a4ba1e, type: 3}
+    m_FontSize: 89
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 8
+    m_MaxSize: 153
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &106036582
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106036579}
 --- !u!4 &108095125 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4868256201905178, guid: 50fc901e811e74c10ada7234ed22eb14,
@@ -3813,14 +3887,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1004957713}
-  m_Father: {fileID: 1011613576}
+  m_Father: {fileID: 1293245930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -59.1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.000005722046, y: 50}
   m_SizeDelta: {x: 559.2, y: 148.2}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &348151323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4474,6 +4548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderLifePlayer: {fileID: 1643716310}
+  panelGameOver: {fileID: 1011613575}
+  timeSurvived: {fileID: 2069378120}
+  timeMaxSurvived: {fileID: 106036581}
 --- !u!1001 &406806077
 Prefab:
   m_ObjectHideFlags: 0
@@ -9556,7 +9633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9696,18 +9773,16 @@ RectTransform:
   m_GameObject: {fileID: 1011613575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0727243, y: 1.0727248, z: 1.0727248}
   m_Children:
-  - {fileID: 1081567117}
-  - {fileID: 2069378119}
-  - {fileID: 348151322}
+  - {fileID: 1293245930}
   m_Father: {fileID: 400452150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 1.9, y: -21.4}
+  m_SizeDelta: {x: 130.6, y: 133.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1012624210 stripped
 Transform:
@@ -9858,6 +9933,11 @@ Prefab:
     - target: {fileID: 4932302994790000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -10420,74 +10500,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4432038258141054, guid: ee7f91516af52453f98f491cf554a1f1,
     type: 2}
   m_PrefabInternal: {fileID: 1078801170}
---- !u!1 &1081567116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1081567117}
-  - component: {fileID: 1081567119}
-  - component: {fileID: 1081567118}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1081567117
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1081567116}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1011613576}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1081567118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1081567116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5441177, b: 0.5441177, a: 0.392}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1081567119
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1081567116}
 --- !u!1 &1083290060 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1657317042421590, guid: 0d99758f8dacb4e78b125f8de6b97a39,
@@ -11030,6 +11042,11 @@ Prefab:
     - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_Name
       value: ZombieGenerator (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -12085,6 +12102,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4102115031814162, guid: ea23067f9f12846ca92a3ea83d019bd6,
     type: 2}
   m_PrefabInternal: {fileID: 1984915538}
+--- !u!1 &1293245929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1293245930}
+  - component: {fileID: 1293245932}
+  - component: {fileID: 1293245931}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1293245930
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293245929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2069378119}
+  - {fileID: 106036580}
+  - {fileID: 348151322}
+  m_Father: {fileID: 1011613576}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 14, y: -38.8}
+  m_SizeDelta: {x: 1073.5, y: 757.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1293245931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293245929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: e2b4d1cb6da41dd45b6d81a1981d4c03, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1293245932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293245929}
 --- !u!4 &1295234780 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4397136076872576, guid: add53d143e2ea4b9cbd24b57aa90d3be,
@@ -15074,6 +15162,11 @@ Prefab:
       propertyPath: m_Name
       value: ZombieGenerator (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -16223,7 +16316,7 @@ GameObject:
   - component: {fileID: 1643716309}
   - component: {fileID: 1643716310}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: LifePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17564,6 +17657,11 @@ Prefab:
     - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_Name
       value: ZombieGenerator (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -18961,6 +19059,11 @@ Prefab:
     - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_Name
       value: ZombieGenerator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -20880,6 +20983,11 @@ Prefab:
       propertyPath: m_Name
       value: ZombieGenerator (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114798815434157308, guid: ebf448daea14e074ebdce0f5a7107d3d,
+        type: 2}
+      propertyPath: timeToGenerateZombie
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -21251,7 +21359,7 @@ GameObject:
   - component: {fileID: 2069378121}
   - component: {fileID: 2069378120}
   m_Layer: 5
-  m_Name: YouLose
+  m_Name: TimeSurvived
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21267,14 +21375,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1011613576}
-  m_RootOrder: 1
+  m_Father: {fileID: 1293245930}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 123}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000045776, y: 0}
+  m_SizeDelta: {x: 1073.5, y: 313.45}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2069378120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21287,7 +21395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -21296,7 +21404,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2e89042c370795d4fba80c4c56a4ba1e, type: 3}
-    m_FontSize: 153
+    m_FontSize: 89
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 9
@@ -21307,7 +21415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Lose!
+  m_Text: "You Lose! Voc\xEA sobreviveu\npor 3min e 30s."
 --- !u!222 &2069378121
 CanvasRenderer:
   m_ObjectHideFlags: 0

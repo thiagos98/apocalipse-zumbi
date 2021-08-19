@@ -44,6 +44,7 @@ public class ZombieController : MonoBehaviour, IKillable
         }
         else
         {
+            _mDirection = positionPlayer - positionZombie;
             _mAnimation.Attack(true);
         }
     }
