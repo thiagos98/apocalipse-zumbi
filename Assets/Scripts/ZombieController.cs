@@ -13,6 +13,7 @@ public class ZombieController : MonoBehaviour, IKillable
     private Status _mStatusZombie;
     private Vector3 _mRandomPosition;
     private float _mWanderCounter;
+    private GameController _gameController;
     private float _mTimeBetweenRandomPosition = 4;
     private float _mGenerationPercentage = 0.1f;
     public AudioClip zombieDeathSound;
@@ -23,6 +24,8 @@ public class ZombieController : MonoBehaviour, IKillable
         _mMovement = GetComponent<MovementCharacters>();
         _mAnimation = GetComponent<AnimationCharacters>();
         _mStatusZombie = GetComponent<Status>();
+        //_gameController = GameObject.FindWithTag(Tags.GameController).GetComponent<GameController>();
+        _gameController = GameObject.FindObjectOfType(typeof(GameController)) as GameController;
         RandomizeZombie();
     }
 
@@ -99,6 +102,7 @@ public class ZombieController : MonoBehaviour, IKillable
         AudioController.Instance.PlayOneShot(zombieDeathSound);
         Destroy(gameObject);
         RandomGenerationMedKit(_mGenerationPercentage);
+        _gameController.UpdateAmountDeadZombies();
     }
 
     private void RandomGenerationMedKit(float generationPercentage)

@@ -4,10 +4,11 @@ using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
-    public InterfaceController interfaceController;
+    private InterfaceController _interfaceController;
     private void Awake()
     {
         SetTimeScale(1);
+        _interfaceController = GameObject.FindWithTag(Tags.Canvas).GetComponent<InterfaceController>();
     }
 
     public void RestartGame()
@@ -17,16 +18,21 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        interfaceController.GameOver();
+        _interfaceController.GameOver();
     }
 
     public void UpdateLifePlayer()
     {
-        interfaceController.UpdateSliderLifePlayer();
+        _interfaceController.UpdateSliderLifePlayer();
     }
 
     public static void SetTimeScale(int time)
     {
         Time.timeScale = time;
+    }
+
+    public void UpdateAmountDeadZombies()
+    {
+        _interfaceController.UpdateAmountDeadZombies();
     }
 }

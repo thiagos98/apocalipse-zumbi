@@ -9,10 +9,12 @@ public class InterfaceController : MonoBehaviour
 {
 	private PlayerController _playerController;
 	private float _mMaximumScore;
+	private int _mAmountZombiesDead;
 	public Slider sliderLifePlayer; 
 	public GameObject panelGameOver;
 	public Text timeSurvived;
 	public Text timeMaxSurvived;
+	public Text amountZombiesDead;
 	private void Start ()
 	{
 		_playerController = GameObject.FindWithTag(Tags.Player).GetComponent<PlayerController>();
@@ -26,13 +28,21 @@ public class InterfaceController : MonoBehaviour
 		sliderLifePlayer.value = _playerController.statusPlayer.mLife;
 	}
 
+	public void UpdateAmountDeadZombies()
+	{
+		_mAmountZombiesDead++;
+		amountZombiesDead.text = string.Format("x {0}", _mAmountZombiesDead);
+	}
+
 	public void GameOver()
 	{
 		var minutes = (int) (Time.timeSinceLevelLoad / 60);
 		var seconds = (int) (Time.timeSinceLevelLoad % 60);
-		timeSurvived.text = "You Lose!\n You survived for " + minutes + "min and \n" + seconds + "s.";
+		timeSurvived.text = "You Lose!\n You survived for " + minutes + "min and " + seconds + 
+		                    "s. Killed " + _mAmountZombiesDead + " zombies.";
 		AdjustHighScore(minutes, seconds);
 		sliderLifePlayer.gameObject.SetActive(false);
+		amountZombiesDead.gameObject.SetActive(false);
 		panelGameOver.SetActive(true);
 	}
 
