@@ -7,27 +7,45 @@ using Random = UnityEngine.Random;
 public class ZombieGenerator : MonoBehaviour
 {
 	private float _mTimeCounter = 0f;
-	public GameObject zombie;
-	public float timeToGenerateZombie = 1f;
-	public LayerMask layerZombie;
 	private const float MGenerateDistance = 3;
 	private const float MDistanceFromPlayerToGeneration = 20;
 	private GameObject _player;
-
+	private int _mMaximumAmountLiveZombies = 3;
+	private int _mCurrentAmountZombiesLive;
+	private const int MTimeForNextDifficultyIncrement = 15;
+	private int _counterIncreaseDifficulty;
+	public GameObject zombie;
+	public float timeToGenerateZombie = 1f;
+	public LayerMask layerZombie;
 	private void Start()
 	{
 		_player = GameObject.FindWithTag(Tags.Player);
+		_counterIncreaseDifficulty = MTimeForNextDifficultyIncrement;
+		for (var i = 0; i < _mMaximumAmountLiveZombies; i++)
+		{
+			StartCoroutine(GenerateNewZombie());
+		}
 	}
 
 	private void Update ()
 	{
-		if (!(Vector3.Distance(transform.position, _player.transform.position) >
-		      MDistanceFromPlayerToGeneration)) return;
-		_mTimeCounter += Time.deltaTime;
+		var canSpawnZombies = Vector3.Distance(transform.position, _player.transform.position) >
+		                      MDistanceFromPlayerToGeneration;
 		
-		if (!(_mTimeCounter >= timeToGenerateZombie)) return;
-		StartCoroutine(GenerateNewZombie());
-		_mTimeCounter = 0f;
+		if (canSpawnZombies && _mCurrentAmountZombiesLive < _mMaximumAmountLiveZombies)
+		{
+			_mTimeCounter += Time.deltaTime;
+		
+			if (!(_mTimeCounter >= timeToGenerateZombie)) return;
+			StartCoroutine(GenerateNewZombie());
+			_mTimeCounter = 0f;
+		}
+
+		if (Time.timeSinceLevelLoad > _counterIncreaseDifficulty)
+		{
+			_mMaximumAmountLiveZombies++;
+			_counterIncreaseDifficulty = (int)Time.timeSinceLevelLoad + MTimeForNextDifficultyIncrement;
+		}
 	}
 
 	private void OnDrawGizmos()
@@ -36,6 +54,7 @@ public class ZombieGenerator : MonoBehaviour
 		Gizmos.DrawWireSphere(transform.position, MGenerateDistance);
 	}
 
+	// ReSharper disable Unity.PerformanceAnalysis
 	private IEnumerator GenerateNewZombie()
 	{
 		var creatingPosition = RandomizePosition();
@@ -48,7 +67,10 @@ public class ZombieGenerator : MonoBehaviour
 			yield return null;
 		}
 		
-		Instantiate(zombie, creatingPosition, transform.rotation);
+		var zombieGenerated = Instantiate(zombie, creatingPosition, transform.rotation)
+			.GetComponent<ZombieController>();
+		zombieGenerated.ZombieGenerator = this;
+		_mCurrentAmountZombiesLive++;
 	}
 
 	private Vector3 RandomizePosition()
@@ -57,5 +79,10 @@ public class ZombieGenerator : MonoBehaviour
 		position += transform.position;
 		position.y = 0;
 		return position;
+	}
+
+	public void ReduceAmountLiveZombies()
+	{
+		_mCurrentAmountZombiesLive--;
 	}
 }

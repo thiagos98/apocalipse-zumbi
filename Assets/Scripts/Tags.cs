@@ -7,4 +7,5 @@ public class Tags : MonoBehaviour
 	public const string Player = "Player";
 	public const string GameController = "GameController";
 	public const string Canvas = "Canvas";
+	public const string ZombieGenerator = "ZombieGenerator";
 }

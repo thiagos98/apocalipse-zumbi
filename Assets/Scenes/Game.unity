@@ -11112,6 +11112,10 @@ Prefab:
       propertyPath: timeToGenerateZombie
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -14749,6 +14753,10 @@ Prefab:
       propertyPath: timeToGenerateZombie
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -15282,6 +15290,10 @@ Prefab:
       propertyPath: timeToGenerateZombie
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -15474,6 +15486,10 @@ Prefab:
     - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
       propertyPath: m_Name
       value: ZombieGenerator (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -17829,6 +17845,10 @@ Prefab:
       propertyPath: timeToGenerateZombie
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0
@@ -19230,6 +19250,10 @@ Prefab:
         type: 2}
       propertyPath: timeToGenerateZombie
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
@@ -21228,6 +21252,10 @@ Prefab:
         type: 2}
       propertyPath: timeToGenerateZombie
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_TagString
+      value: ZombieGenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
