@@ -15294,6 +15294,10 @@ Prefab:
       propertyPath: m_TagString
       value: ZombieGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 1325477139856030, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf448daea14e074ebdce0f5a7107d3d, type: 2}
   m_IsPrefabParent: 0

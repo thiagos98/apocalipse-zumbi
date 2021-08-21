@@ -62,7 +62,7 @@ public class ZombieController : MonoBehaviour, IKillable
         if (_mWanderCounter <= 0)
         {
             _mRandomPosition = RandomizePosition();
-            _mWanderCounter += _mTimeBetweenRandomPosition;
+            _mWanderCounter += _mTimeBetweenRandomPosition + Random.Range(-2f, 2f);
         }
 
         var itsClose = Vector3.Distance(transform.position, _mRandomPosition) <= 0.05f;
@@ -101,10 +101,13 @@ public class ZombieController : MonoBehaviour, IKillable
     public void Die()
     {
         AudioController.Instance.PlayOneShot(zombieDeathSound);
-        Destroy(gameObject);
+        _mAnimation.Die();
+        _mMovement.Die();
         RandomGenerationMedKit(_mGenerationPercentage);
         _gameController.UpdateAmountDeadZombies();
         ZombieGenerator.ReduceAmountLiveZombies();
+        this.enabled = false;
+        Destroy(gameObject, 2);
     }
 
     private void RandomGenerationMedKit(float generationPercentage)

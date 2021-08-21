@@ -22,5 +22,12 @@ public class MovementCharacters : MonoBehaviour
 		var newRotation = Quaternion.LookRotation(direction);
 		MRig.MoveRotation(newRotation);
 	}
+
+	public void Die()
+	{
+		MRig.constraints = RigidbodyConstraints.None;
+		MRig.velocity = Vector3.zero;
+		GetComponent<Collider>().enabled = false;
+	}
 	
 }

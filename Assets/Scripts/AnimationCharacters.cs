@@ -22,4 +22,9 @@ public class AnimationCharacters : MonoBehaviour
 	{
 		_mAnimator.SetFloat("Move", value);
 	}
+
+	public void Die()
+	{
+		_mAnimator.SetTrigger("Morrer");
+	}
 }
