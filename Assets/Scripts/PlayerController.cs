@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour, IKillable, ICurable
         statusPlayer.mLife -= damageEnemy;
         _gameController.UpdateLifePlayer();
         AudioController.Instance.PlayOneShot(damageSound);
-        
         if (statusPlayer.mLife > 0) return;
         Die();
     }

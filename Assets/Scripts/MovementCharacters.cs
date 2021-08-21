@@ -27,6 +27,7 @@ public class MovementCharacters : MonoBehaviour
 	{
 		MRig.constraints = RigidbodyConstraints.None;
 		MRig.velocity = Vector3.zero;
+		MRig.isKinematic = false;
 		GetComponent<Collider>().enabled = false;
 	}
 	
