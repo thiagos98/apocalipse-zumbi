@@ -1,10 +1,7 @@
-﻿using NUnit.Framework.Internal;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
-public class BossController : MonoBehaviour, IKillable
-{
+public class BossController : MonoBehaviour, IKillable {
     [SerializeField] private GameObject mMedKitPrefab;
     private Transform _player;
     private NavMeshAgent _agent;
