@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour, IKillable {
     [SerializeField] private GameObject mMedKitPrefab;
@@ -8,6 +10,9 @@ public class BossController : MonoBehaviour, IKillable {
     private Status _mStatusBoss;
     private AnimationCharacters _mAnimation;
     private MovementCharacters _mMovement;
+    public Slider sliderBossLife;
+    public Color maxLife, minimumLife;
+    public Image imageSlider;
 
     private void Start()
     {
@@ -17,6 +22,7 @@ public class BossController : MonoBehaviour, IKillable {
         _mAnimation = GetComponent<AnimationCharacters>();
         _mMovement = GetComponent<MovementCharacters>();
         
+        SetBossLifeInterface();
         SetSpeed();
     }
 
@@ -46,6 +52,7 @@ public class BossController : MonoBehaviour, IKillable {
     public void TakeDamage(int damage)
     {
         _mStatusBoss.mLife -= damage;
+        UpdateInterface();
         if (_mStatusBoss.mLife <= 0)
         {
             Die();
@@ -60,5 +67,20 @@ public class BossController : MonoBehaviour, IKillable {
         _agent.enabled = false;
         Instantiate(mMedKitPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject, 2);
+    }
+
+    private void UpdateInterface()
+    {
+        sliderBossLife.value = _mStatusBoss.mLife;
+        var percentageLife = (float) _mStatusBoss.mLife / _mStatusBoss.initialLife;
+        var lifeColor = Color.Lerp(minimumLife, maxLife, percentageLife);
+        imageSlider.color = lifeColor;
+    }
+
+    private void SetBossLifeInterface()
+    {
+        sliderBossLife.maxValue = _mStatusBoss.initialLife;
+        sliderBossLife.value = sliderBossLife.maxValue;
+        imageSlider.color = maxLife;
     }
 }
