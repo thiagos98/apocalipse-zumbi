@@ -87,7 +87,7 @@ public class ZombieController : MonoBehaviour, IKillable
 
     private void RandomizeZombie()
     {
-        var generateTypeZombie = Random.Range(1, 28);
+        var generateTypeZombie = Random.Range(1, transform.childCount);
         transform.GetChild(generateTypeZombie).gameObject.SetActive(true);
     }
 

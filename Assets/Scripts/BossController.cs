@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class BossController : MonoBehaviour, IKillable
 {
+    [SerializeField] private GameObject mMedKitPrefab;
     private Transform _player;
     private NavMeshAgent _agent;
     private Status _mStatusBoss;
@@ -59,6 +61,7 @@ public class BossController : MonoBehaviour, IKillable
         _mMovement.Die();
         this.enabled = false;
         _agent.enabled = false;
+        Instantiate(mMedKitPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject, 2);
     }
 }
