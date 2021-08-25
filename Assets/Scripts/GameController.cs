@@ -35,4 +35,9 @@ public class GameController : MonoBehaviour
     {
         _interfaceController.UpdateAmountDeadZombies();
     }
+
+    public void ShowUpWarningBossCreated()
+    {
+        _interfaceController.ShowUpWarningBossCreated();
+    }
 }

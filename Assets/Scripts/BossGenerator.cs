@@ -6,18 +6,26 @@ using UnityEngine.Serialization;
 
 public class BossGenerator : MonoBehaviour
 {
-    private float _mTimeNextGeneration = 0;
     [SerializeField] private float mTimeBetweenGenerations = 30;
+    private float _mTimeNextGeneration = 0;
+    private GameController _gameController;
+    private Transform _player;
     public GameObject bossPrefab;
+    public Transform[] positionsGenerateBoss;
+    
     private void Start()
     {
+        _gameController = GameObject.FindWithTag(Tags.GameController).GetComponent<GameController>();
+        _player = GameObject.FindWithTag(Tags.Player).transform;
         _mTimeNextGeneration = mTimeBetweenGenerations;
     }
 
     private void Update()
     {
         if (!(Time.timeSinceLevelLoad > _mTimeNextGeneration)) return;
-        Instantiate(bossPrefab, transform.position, Quaternion.identity);
+        var calculatedPosition = CalculateFarthestPositionFromPlayer();
+        Instantiate(bossPrefab, calculatedPosition, Quaternion.identity);
+        _gameController.ShowUpWarningBossCreated();
         _mTimeNextGeneration = Time.timeSinceLevelLoad + mTimeBetweenGenerations;
     }
     
@@ -25,5 +33,19 @@ public class BossGenerator : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 3);
+    }
+
+    private Vector3 CalculateFarthestPositionFromPlayer()
+    {
+        var farthestPosition = Vector3.zero;
+        var greaterDistance = 0f;
+        foreach (var positions in positionsGenerateBoss)
+        {
+            var distanceBetweenPlayer = Vector3.Distance(positions.position, _player.position);
+            if (!(distanceBetweenPlayer > greaterDistance)) continue;
+            greaterDistance = distanceBetweenPlayer;
+            farthestPosition = positions.position;
+        }
+        return farthestPosition;
     }
 }

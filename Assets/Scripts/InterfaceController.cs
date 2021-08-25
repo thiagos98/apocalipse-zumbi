@@ -15,6 +15,7 @@ public class InterfaceController : MonoBehaviour
 	public Text timeSurvived;
 	public Text timeMaxSurvived;
 	public Text amountZombiesDead;
+	public Text textWarningBossBorn;
 	private void Start ()
 	{
 		_playerController = GameObject.FindWithTag(Tags.Player).GetComponent<PlayerController>();
@@ -45,6 +46,33 @@ public class InterfaceController : MonoBehaviour
 		amountZombiesDead.gameObject.SetActive(false);
 		panelGameOver.SetActive(true);
 	}
+	
+	public void ShowUpWarningBossCreated()
+	{
+		StartCoroutine(DisappearText(2, textWarningBossBorn));
+	}
+
+	private IEnumerator DisappearText(float time, Text disappearText)
+	{
+		disappearText.gameObject.SetActive(true);
+		var textColor = disappearText.color;
+		textColor.a = 1;
+		disappearText.color = textColor;
+		yield return new WaitForSeconds(time);
+		float counter = 0f;
+		while (disappearText.color.a > 0)
+		{
+			counter += Time.deltaTime / time;
+			textColor.a = Mathf.Lerp(1, 0, counter);
+			disappearText.color = textColor;
+			if (disappearText.color.a <= 0)
+			{
+				disappearText.gameObject.SetActive(false);
+			}
+			yield return null;
+		}
+	}
+	
 
 	private void AdjustHighScore(int min, int sec)
 	{
@@ -62,4 +90,5 @@ public class InterfaceController : MonoBehaviour
 			timeMaxSurvived.text = string.Format("Your best time was {0}min and {1}s.", min, sec);
 		}
 	}
+
 }
