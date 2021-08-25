@@ -4,8 +4,9 @@ using Random = UnityEngine.Random;
 
 public class ZombieController : MonoBehaviour, IKillable
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject mMedKitPrefab;
+    [SerializeField] private GameObject mBloodParticleZombie;
+    private PlayerController _player;
     private Vector3 _mDirection;
     private int _mDamage;
     private MovementCharacters _mMovement;
@@ -22,7 +23,7 @@ public class ZombieController : MonoBehaviour, IKillable
 
     private void Start()
     {
-        player = GameObject.FindWithTag(Tags.Player);
+        _player = GameObject.FindObjectOfType(typeof(PlayerController)) as PlayerController;
         _mMovement = GetComponent<MovementCharacters>();
         _mAnimation = GetComponent<AnimationCharacters>();
         _mStatusZombie = GetComponent<Status>();
@@ -32,7 +33,7 @@ public class ZombieController : MonoBehaviour, IKillable
 
     private void FixedUpdate()
     {
-        var positionPlayer = player.transform.position;
+        var positionPlayer = _player.transform.position;
         var positionZombie = transform.position;
         var distance = Vector3.Distance(positionZombie, positionPlayer);
         
@@ -82,7 +83,8 @@ public class ZombieController : MonoBehaviour, IKillable
     private void AttackPlayer()
     {
         _mDamage = Random.Range(20, 30);
-        player.GetComponent<PlayerController>().TakeDamage(_mDamage);
+        _player.BloodParticle(_player.transform.position, Quaternion.LookRotation(-_player.transform.forward));
+        _player.TakeDamage(_mDamage);
     }
 
     private void RandomizeZombie()
@@ -96,6 +98,11 @@ public class ZombieController : MonoBehaviour, IKillable
         _mStatusZombie.mLife -= damage;
         if (_mStatusZombie.mLife > 0) return;
         Die();
+    }
+
+    public void BloodParticle(Vector3 position, Quaternion rotation)
+    {
+        Instantiate(mBloodParticleZombie, position, rotation);
     }
 
     public void Die()

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BossController : MonoBehaviour, IKillable {
     [SerializeField] private GameObject mMedKitPrefab;
+    [SerializeField] private GameObject mBloodParticleBoss;
     private Transform _player;
     private NavMeshAgent _agent;
     private Status _mStatusBoss;
@@ -57,6 +58,11 @@ public class BossController : MonoBehaviour, IKillable {
         {
             Die();
         }
+    }
+    
+    public void BloodParticle(Vector3 position, Quaternion rotation)
+    {
+        Instantiate(mBloodParticleBoss, position, rotation);
     }
 
     public void Die()

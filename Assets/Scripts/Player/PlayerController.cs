@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour, IKillable, ICurable
 {
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private AudioClip damageSound;
+    [SerializeField] private GameObject mBloodParticlePlayer;
     private Vector3 _mDirection;
     private GameController _gameController;
     private MovementPlayer _movementPlayer;
@@ -53,6 +54,11 @@ public class PlayerController : MonoBehaviour, IKillable, ICurable
             statusPlayer.mLife = statusPlayer.initialLife;
         }
         _gameController.UpdateLifePlayer();
+    }
+    
+    public void BloodParticle(Vector3 position, Quaternion rotation)
+    {
+        Instantiate(mBloodParticlePlayer, position, rotation);
     }
     
     public void Die()

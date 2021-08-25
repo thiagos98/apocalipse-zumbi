@@ -20,13 +20,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        var oppositeRotation = Quaternion.LookRotation(-transform.forward);
         switch (other.tag)
         {
             case Tags.Enemy:
-                other.GetComponent<ZombieController>().TakeDamage(damage);
+                var zombie = other.GetComponent<ZombieController>();
+                zombie.TakeDamage(damage);
+                zombie.BloodParticle(transform.position, oppositeRotation);
                 break;
             case Tags.Boss:
-                other.GetComponent<BossController>().TakeDamage(damage);
+                var boss = other.GetComponent<BossController>();
+                boss.TakeDamage(damage);
+                boss.BloodParticle(transform.position, oppositeRotation);
                 break;
         }
 

@@ -6,4 +6,5 @@ public interface IKillable
 {
     void TakeDamage(int damage);
     void Die();
+    void BloodParticle(Vector3 position, Quaternion rotation);
 }
