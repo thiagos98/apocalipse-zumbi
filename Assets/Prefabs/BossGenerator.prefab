@@ -167,6 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a066069d8581acf45b23accf6d47e621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTimeBetweenGenerations: 10
+  mTimeBetweenGenerations: 45
   bossPrefab: {fileID: 1063500868937916, guid: 3839884b375ff6a44b2e91e07d44bfba, type: 2}
-  positionsGenerateBoss: []
+  positionsGenerateBoss:
+  - {fileID: 4951459464881172}
+  - {fileID: 4158280723630480}
+  - {fileID: 4587107268741132}
+  - {fileID: 4298824440966622}
